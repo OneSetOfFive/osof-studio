@@ -26,10 +26,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { background: var(--parchment); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow-x: hidden; cursor: none; }
-
-  .cursor { width: 12px; height: 12px; border-radius: 50%; background: var(--terracotta); position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width 0.2s, height 0.2s; mix-blend-mode: multiply; }
-  .cursor-ring { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--terracotta); position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width 0.2s, height 0.2s; opacity: 0.6; }
+  body { background: var(--parchment); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
 
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9000; opacity: 0.4; }
 
@@ -69,10 +66,7 @@
   .hero-cta:hover::before { transform: translateX(0); }
   .hero-cta span, .hero-cta .arrow { position: relative; z-index: 1; }
   .hero-cta:hover .arrow { transform: translateX(4px); }
-  .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.6rem; opacity: 0; animation: fadeUp 0.8s ease 3s forwards; }
-  .hero-scroll span { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(196,112,58,0.7); }
-  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(196,112,58,0.6), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-  @keyframes scrollPulse { 0%,100% { transform: scaleY(1); opacity: 1; } 50% { transform: scaleY(0.5); opacity: 0.4; } }
+
   @keyframes letterDrop { to { opacity: 1; transform: translateY(0) rotate(0deg); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -109,13 +103,13 @@
   #products { background: var(--parchment); }
   .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
   .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; }
-  .flip-card { height: 380px; perspective: 1200px; cursor: pointer; }
+  .flip-card { height: 420px; perspective: 1200px; cursor: pointer; }
   .flip-card-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.4,0.2,0.2,1); }
   .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
   .flip-card-front, .flip-card-back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 16px; overflow: hidden; }
-  .flip-card-front { background: white; border: 1px solid rgba(196,112,58,0.12); display: flex; flex-direction: column; padding: 2.5rem 2rem; transition: box-shadow 0.3s; }
+  .flip-card-front { background: white; border: 1px solid rgba(196,112,58,0.12); display: flex; flex-direction: column; padding: 2rem 1.8rem; transition: box-shadow 0.3s; }
   .flip-card:hover .flip-card-front { box-shadow: 0 20px 50px rgba(196,112,58,0.12); }
-  .flip-card-back { background: var(--espresso); transform: rotateY(180deg); display: flex; flex-direction: column; padding: 2.5rem 2rem; justify-content: space-between; }
+  .flip-card-back { background: var(--espresso); transform: rotateY(180deg); display: flex; flex-direction: column; padding: 1.6rem 1.8rem; justify-content: space-between; overflow: hidden; }
   .card-app-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.8rem; }
   .card-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.7rem; }
   .card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.8rem; line-height: 1.2; }
@@ -124,11 +118,11 @@
   .card-hint::after { content: '↻'; font-size: 0.9rem; animation: spin 4s linear infinite; }
   @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   .back-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.7rem; }
-  .back-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--parchment); margin-bottom: 1.2rem; }
+  .back-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--parchment); margin-bottom: 0.7rem; }
   .back-features { list-style: none; flex: 1; }
-  .back-features li { font-size: 0.82rem; color: rgba(247,240,228,0.7); padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.4; }
+  .back-features li { font-size: 0.78rem; color: rgba(247,240,228,0.7); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.35; }
   .back-features li::before { content: '→'; color: var(--terracotta-light); flex-shrink: 0; }
-  .back-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.6rem; background: var(--terracotta); color: white; text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 6px; margin-top: 1.5rem; transition: background 0.2s; width: fit-content; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .back-cta { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.65rem 1.3rem; background: var(--terracotta); color: white; text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 6px; margin-top: 0.8rem; transition: background 0.2s; width: fit-content; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
   .back-cta:hover { background: var(--terracotta-dark); }
   .coming-soon-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.8rem; background: rgba(196,112,58,0.1); border: 1px solid rgba(196,112,58,0.25); border-radius: 20px; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; width: fit-content; }
   .coming-soon-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); animation: blink 1.5s infinite; }
@@ -156,7 +150,7 @@
   .telecom-badge { padding: 0.6rem 1.2rem; background: white; border-radius: 30px; border: 1px solid rgba(196,112,58,0.2); font-size: 0.75rem; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 0.5rem; transition: background 0.2s, color 0.2s; cursor: default; }
   .telecom-badge:hover { background: var(--terracotta); color: white; border-color: var(--terracotta); }
   .telecom-visual { background: white; border-radius: 20px; padding: 3rem; border: 1px solid rgba(196,112,58,0.15); position: relative; }
-  .telecom-visual::before { content: 'SIGNAL'; position: absolute; top: -1rem; left: 2.5rem; font-size: 3rem; }
+  .telecom-visual::before { content: '📡'; position: absolute; top: -1.5rem; left: 2.5rem; font-size: 3rem; }
   .telecom-title-block { margin-top: 1rem; margin-bottom: 2rem; }
   .telecom-title-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.4rem; }
   .telecom-title-block p { font-size: 0.82rem; color: var(--text-light); }
@@ -223,9 +217,6 @@
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
 <!-- NAV -->
 <nav id="nav">
   <a class="nav-logo" href="#hero">OSOF</a>
@@ -256,10 +247,7 @@
     <div class="hero-tagline">Closing the gap between big tech and small business.</div>
     <a href="#products" class="hero-cta"><span>Explore Our Work</span><span class="arrow">&rarr;</span></a>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
+
 </section>
 
 <!-- MISSION -->
@@ -322,7 +310,36 @@
               <li>Accessibility-first design from the ground up</li>
             </ul>
           </div>
-          <a class="back-cta" href="https://apps.apple.com/us/app/layman/id6757346427" target="_blank" rel="noopener" onclick="event.stopPropagation()">Download on App Store &rarr;</a>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;">
+              <a class="back-cta" href="https://apps.apple.com/us/app/layman/id6757346427" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="width:100%;justify-content:center;">Download on App Store &rarr;</a>
+              <a class="back-cta" href="https://LaymanDocs.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="width:100%;justify-content:center;background:rgba(255,255,255,0.1);">Visit LaymanDocs.com &rarr;</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TenensScope -->
+    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="card-app-icon" style="background:rgba(0,120,255,0.15);">&#x1F52D;</div>
+          <div class="card-tag">Healthcare Recruiting &middot; Intelligence</div>
+          <div class="card-name">Tenens Scope</div>
+          <p class="card-desc">The intelligence platform built for the locums industry. Whether you&rsquo;re launching a startup or an individual tracking your own book &mdash; Tenens Scope gives you an edge no other tool can match.</p>
+          <div class="card-hint">Tap to learn more</div>
+        </div>
+        <div class="flip-card-back" style="background:#0D1E35;">
+          <div>
+            <div class="back-label" style="color:#4A9EFF;">Tenens Scope &middot; Physician Intelligence</div>
+            <div class="back-name">Your book. Your edge. Your insight.</div>
+            <ul class="back-features">
+              <li>AI-powered algorithms predict physician locums likelihood with precision</li>
+              <li>Turnkey solution for locum startups &mdash; launch your book from day one</li>
+              <li>Track and own your individual relationships &amp; analytics no matter what side of the desk you&rsquo;re on</li>
+              <li>Advanced integrations running under the hood &mdash; you just see results</li>
+            </ul>
+          </div>
+          <a class="back-cta" href="https://TenensScope.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:#0055CC;">Visit TenensScope.com &rarr;</a>
         </div>
       </div>
     </div>
@@ -361,7 +378,7 @@
           <div class="card-app-icon" style="background:rgba(184,146,42,0.12);">&#x1F3E5;</div>
           <div class="card-tag">Healthcare &middot; Practice Management</div>
           <div class="card-name">Healthcare Practice Manager</div>
-          <p class="card-desc">Built for clinics and practices that need real organization without enterprise overhead. Manage your providers, patients, and workflows &mdash; all in one place.</p>
+          <p class="card-desc">Built for clinics and practices that need real organization without enterprise overhead. Explore the live environment &mdash; manage providers, patients, and workflows all in one place.</p>
           <div class="card-hint">Tap to learn more</div>
         </div>
         <div class="flip-card-back">
@@ -372,10 +389,10 @@
               <li>Provider and patient workflow management</li>
               <li>Designed for small-to-mid size clinical practices</li>
               <li>Affordable alternative to bloated enterprise systems</li>
-              <li>Demo available &mdash; built for your next client presentation</li>
+              <li>Click through and explore the live environment yourself</li>
             </ul>
           </div>
-          <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Demo &rarr;</button>
+          <a class="back-cta" href="https://OSOFclinic.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Explore Live &rarr;</a>
         </div>
       </div>
     </div>
@@ -428,7 +445,7 @@
               <li>Built for indie devs who ship fast and look good doing it</li>
             </ul>
           </div>
-          <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Try CrossFrame &rarr;</button>
+          <a class="back-cta" href="https://Crossframe.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Try CrossFrame &rarr;</a>
         </div>
       </div>
     </div>
@@ -436,12 +453,12 @@
     <!-- Automation Consulting -->
     <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
-        <div class="flip-card-front" style="background:linear-gradient(135deg,var(--espresso) 0%,#3D2B14 100%);border-color:rgba(196,112,58,0.2);">
+        <div class="flip-card-front">
           <div class="card-app-icon" style="background:rgba(196,112,58,0.15);">&#x1F916;</div>
-          <div class="card-tag" style="color:var(--terracotta-light);">Consulting &middot; Agentic AI</div>
-          <div class="card-name" style="color:var(--parchment);">Automation Consulting</div>
-          <p class="card-desc" style="color:rgba(247,240,228,0.6);">Let AI agents do the heavy lifting in your business or personal workflows. We design, deploy, and optimize agentic systems that actually work.</p>
-          <div class="card-hint" style="color:rgba(247,240,228,0.3);">Tap to learn more</div>
+          <div class="card-tag">Consulting &middot; Agentic AI</div>
+          <div class="card-name">Automation Consulting</div>
+          <p class="card-desc">Let AI agents do the heavy lifting in your business or personal workflows. We design, deploy, and optimize agentic systems that actually work.</p>
+          <div class="card-hint">Tap to learn more</div>
         </div>
         <div class="flip-card-back" style="background:var(--terracotta-dark);">
           <div>
@@ -454,7 +471,10 @@
               <li>Ongoing support so you&rsquo;re never left alone with the tech</li>
             </ul>
           </div>
-          <button class="back-cta" style="background:var(--espresso);" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Consult &rarr;</button>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;">
+              <a class="back-cta" href="https://easy-shell.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:var(--espresso);width:100%;justify-content:center;">Explore Easy Shell &rarr;</a>
+              <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:rgba(255,255,255,0.1);width:100%;justify-content:center;">Book a Consult &rarr;</button>
+            </div>
         </div>
       </div>
     </div>
@@ -496,6 +516,7 @@
       <h2 class="section-heading">Telecom &amp;<br>Cellular Consulting</h2>
       <div class="divider"></div>
       <p class="section-body">Most businesses are overpaying for cellular service &mdash; and most individuals don&rsquo;t know their rights when billing disputes arise. With deep industry contacts and years of insider knowledge, we negotiate, audit, and advocate on your behalf.</p>
+      <p class="section-body" style="margin-top:1rem;">We have already delivered expert analysis on a case that is currently awaiting trial &mdash; real results, real stakes.</p>
       <div class="telecom-badge-row">
         <span class="telecom-badge">&#x1F4C4; Bill Review</span>
         <span class="telecom-badge">&#x2696;&#xFE0F; Legal Proceedings</span>
@@ -531,7 +552,7 @@
       <p class="section-body">Whether you need an app built, workflows automated, your telecom bill audited, or just a straight answer from someone who knows &mdash; we&rsquo;re here.</p>
       <div style="margin-top:2.5rem;">
         <div class="contact-info-item"><div class="contact-info-icon">&#x2709;&#xFE0F;</div><div><div class="contact-info-label">Email</div><div class="contact-info-value"><a href="mailto:Dharyl@onesetoffive.me">Dharyl@onesetoffive.me</a></div></div></div>
-        <div class="contact-info-item"><div class="contact-info-icon">&#x1F310;</div><div><div class="contact-info-label">Based In</div><div class="contact-info-value">United States &middot; Available Remotely</div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">&#x1F310;</div><div><div class="contact-info-label">Based In</div><div class="contact-info-value">South Florida &middot; Available Remotely</div></div></div>
         <div class="contact-info-item"><div class="contact-info-icon">&#x26A1;</div><div><div class="contact-info-label">Response Time</div><div class="contact-info-value">Within 24 hours</div></div></div>
         <div class="contact-info-item"><div class="contact-info-icon">&#x1F91D;</div><div><div class="contact-info-label">Services</div><div class="contact-info-value">Apps &middot; Automation &middot; Telecom &middot; Consulting</div></div></div>
       </div>
@@ -560,6 +581,12 @@
         <span id="submitText">Send Message</span>
         <span id="submitArrow">&rarr;</span>
       </button>
+      <div id="formSuccess" style="display:none;margin-top:1rem;padding:1rem 1.2rem;background:rgba(94,158,106,0.12);border:1px solid rgba(94,158,106,0.3);border-radius:8px;font-size:0.82rem;color:#7EC48A;text-align:center;">
+        ✓ Message sent! Dharyl will get back to you within 24 hours.
+      </div>
+      <div id="formError" style="display:none;margin-top:1rem;padding:1rem 1.2rem;background:rgba(196,90,90,0.12);border:1px solid rgba(196,90,90,0.3);border-radius:8px;font-size:0.82rem;color:#E88080;text-align:center;">
+        Something went wrong. Please email Dharyl@onesetoffive.me directly.
+      </div>
     </div>
   </div>
 </section>
@@ -571,25 +598,7 @@
 </footer>
 
 <script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursorRing');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
-  });
-  function animateCursor() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px';
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-  document.querySelectorAll('a, button, .flip-card, .pillar, .service-card, .telecom-badge').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.width = '20px'; cursor.style.height = '20px'; cursorRing.style.width = '50px'; cursorRing.style.height = '50px'; });
-    el.addEventListener('mouseleave', () => { cursor.style.width = '12px'; cursor.style.height = '12px'; cursorRing.style.width = '36px'; cursorRing.style.height = '36px'; });
-  });
+
 
   // Nav scroll
   const nav = document.getElementById('nav');
@@ -615,8 +624,8 @@
     if (hb) hb.style.transform = 'translateY(' + (s * 0.15) + 'px)';
   });
 
-  // Contact form
-  function handleSubmit() {
+  // Contact form — Formspree
+  async function handleSubmit() {
     const fname = document.getElementById('fname').value.trim();
     const lname = document.getElementById('lname').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -625,6 +634,9 @@
     const btn = document.getElementById('submitBtn');
     const btnText = document.getElementById('submitText');
     const btnArrow = document.getElementById('submitArrow');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+
     if (!fname || !email || !service || !message) {
       btn.style.background = '#9E5528';
       btnText.textContent = 'Please fill in required fields';
@@ -632,13 +644,39 @@
       setTimeout(() => { btn.style.background = ''; btnText.textContent = 'Send Message'; btnArrow.innerHTML = '&rarr;'; }, 2500);
       return;
     }
-    const subject = encodeURIComponent('[OSOF LLC] ' + service + ' — ' + fname + ' ' + lname);
-    const body = encodeURIComponent('Name: ' + fname + ' ' + lname + '\nEmail: ' + email + '\nService: ' + service + '\n\n' + message);
-    window.location.href = 'mailto:Dharyl@onesetoffive.me?subject=' + subject + '&body=' + body;
-    btn.classList.add('sent');
-    btnText.textContent = 'Message Ready to Send ✓';
-    btnArrow.textContent = '';
-    setTimeout(() => { btn.classList.remove('sent'); btnText.textContent = 'Send Message'; btnArrow.innerHTML = '&rarr;'; }, 5000);
+
+    btn.disabled = true;
+    btnArrow.innerHTML = '<div style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;"></div>';
+    btnText.textContent = 'Sending...';
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    try {
+      const res = await fetch('https://formspree.io/f/mdaldnkp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name: fname + ' ' + lname, email: email, service: service, message: message })
+      });
+      if (res.ok) {
+        btn.classList.add('sent');
+        btnText.textContent = 'Message Sent ✓';
+        btnArrow.textContent = '';
+        successMsg.style.display = 'block';
+        document.getElementById('fname').value = '';
+        document.getElementById('lname').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('service').value = '';
+        document.getElementById('message').value = '';
+        setTimeout(() => { btn.classList.remove('sent'); btn.disabled = false; btnText.textContent = 'Send Message'; btnArrow.innerHTML = '&rarr;'; }, 5000);
+      } else { throw new Error('fail'); }
+    } catch(e) {
+      btn.disabled = false;
+      btn.style.background = '#C45A5A';
+      btnText.textContent = 'Failed — try again';
+      btnArrow.textContent = '!';
+      errorMsg.style.display = 'block';
+      setTimeout(() => { btn.style.background = ''; btnText.textContent = 'Send Message'; btnArrow.innerHTML = '&rarr;'; }, 4000);
+    }
   }
 </script>
 </body>
