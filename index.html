@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OSOF LLC — Closing the gap between big tech and small business.</title>
+<meta name="description" content="OSOF LLC builds accessibility-first apps, automates workflows, and consults for small businesses ready to compete with the big players. Based in South Florida.">
+<meta property="og:title" content="OSOF LLC — Closing the gap between big tech and small business.">
+<meta property="og:description" content="Apps, AI automation, telecom consulting, and platform strategy for businesses and individuals who deserve better tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://osof.studio">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OSOF LLC">
+<meta name="twitter:description" content="Closing the gap between big tech and small business.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFDMTIwOCIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyNCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iMzAwIiBmaWxsPSIjQzQ3MDNBIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMCI+TzwvdGV4dD4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI3IiBmaWxsPSJub25lIiBzdHJva2U9IiNDNDcwM0EiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+Cjwvc3ZnPg==">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjMUMxMjA4Ii8+CiAgPHRleHQgeD0iOTAiIHk9IjEzNSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjEzMCIgZm9udC13ZWlnaHQ9IjMwMCIgZmlsbD0iI0M0NzAzQSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TzwvdGV4dD4KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSJub25lIiBzdHJva2U9IiNDNDcwM0EiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iMC4yNSIvPgo8L3N2Zz4=">
+<meta name="theme-color" content="#1C1208">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -159,6 +170,23 @@
   .telecom-list li:last-child { border-bottom: none; }
   .telecom-list .icon { width: 28px; height: 28px; border-radius: 8px; background: rgba(196,112,58,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
 
+  /* ABOUT */
+  #about { background: var(--cream); position: relative; overflow: hidden; }
+  #about::before { content: ''; position: absolute; top: 0; right: 0; width: 500px; height: 100%; background: radial-gradient(ellipse at right, rgba(196,112,58,0.06) 0%, transparent 70%); pointer-events: none; }
+  .about-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; }
+  .about-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .about-emblem { width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(196,112,58,0.2); display: flex; align-items: center; justify-content: center; position: relative; }
+  .about-emblem::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(196,112,58,0.1); }
+  .about-emblem::after { content: ''; position: absolute; inset: 24px; border-radius: 50%; background: radial-gradient(circle, rgba(196,112,58,0.08) 0%, transparent 70%); }
+  .about-emblem-text { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--terracotta); line-height: 1; position: relative; z-index: 1; }
+  .about-emblem-sub { position: absolute; bottom: 3.5rem; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-light); }
+  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--espresso); line-height: 1.5; margin-bottom: 2rem; position: relative; padding-left: 1.5rem; }
+  .about-quote::before { content: ''; position: absolute; left: 0; top: 0.3em; bottom: 0.3em; width: 2px; background: var(--terracotta); border-radius: 2px; }
+  .about-body { font-size: 1rem; line-height: 1.85; color: var(--text-mid); font-weight: 300; margin-bottom: 1.5rem; }
+  .about-body:last-child { margin-bottom: 0; }
+  .about-tag-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+  .about-tag { padding: 0.45rem 1rem; border: 1px solid rgba(196,112,58,0.25); border-radius: 20px; font-size: 0.72rem; font-weight: 500; color: var(--text-mid); background: white; letter-spacing: 0.05em; }
+
   /* CONTACT */
   #contact { background: var(--espresso-mid); position: relative; overflow: hidden; }
   #contact::before { content: ''; position: absolute; width: 700px; height: 700px; background: radial-gradient(circle, rgba(196,112,58,0.15) 0%, transparent 60%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
@@ -213,6 +241,12 @@
   .footer-copy { font-size: 0.7rem; color: rgba(247,240,228,0.25); }
   .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-style: italic; color: rgba(196,112,58,0.5); }
 
+  .back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--terracotta); border: none; color: white; font-size: 1.1rem; cursor: pointer; z-index: 999; opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s, background 0.2s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(196,112,58,0.3); }
+  .back-to-top.visible { opacity: 1; transform: translateY(0); }
+  .back-to-top:hover { background: var(--terracotta-dark); }
+  .nav-links a.active { color: var(--terracotta) !important; }
+  .nav-links a.active::after { width: 100%; }
+
   @media (max-width: 900px) {
     nav { background: rgba(28,18,8,0.95) !important; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,112,58,0.15); }
     .nav-logo { color: var(--parchment) !important; }
@@ -222,6 +256,9 @@
     .services-grid { grid-template-columns: 1fr; }
     .telecom-inner { grid-template-columns: 1fr; }
     .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-emblem { width: 200px; height: 200px; }
+    .about-emblem-text { font-size: 3.5rem; }
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
     section { padding: 5rem 1.5rem; }
@@ -259,6 +296,7 @@
     <li><a href="#products">Products</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#telecom">Telecom</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -577,6 +615,34 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-emblem reveal">
+        <div class="about-emblem-text">1/5</div>
+        <div class="about-emblem-sub">One Set of Five</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label reveal">The Story</div>
+      <h2 class="section-heading reveal">I know what it feels like when the world wasn&rsquo;t built for you.</h2>
+      <div class="divider reveal"></div>
+      <div class="about-quote reveal">&ldquo;Accessibility isn&rsquo;t just physical. It&rsquo;s monetary. It&rsquo;s knowing you have the proximity to build what you need.&rdquo;</div>
+      <p class="about-body reveal">OSOF stands for One Set of Five. I was born with one hand, and I know how it feels to navigate a world designed around assumptions that don&rsquo;t include you. That experience isn&rsquo;t a footnote. It&rsquo;s the entire foundation of why this company exists.</p>
+      <p class="about-body reveal">In December 2025 I discovered I could code, and something clicked. What followed was a deep, self-driven dive into building: apps, automations, platforms, tools, all pointed at the same problem. Small businesses and everyday people are being priced out of the technology that could change everything for them. A clinic shouldn&rsquo;t have to pay $80,000 a year for software that still doesn&rsquo;t fit. A small business owner shouldn&rsquo;t need to pay $1,000 a month for software that isn&rsquo;t even fully customized to how they actually work.</p>
+      <p class="about-body reveal">The age of personal apps and micro-SaaS is here. I built OSOF to make sure it belongs to everyone, not just the ones who could already afford a seat at the table. I&rsquo;m starting small. I&rsquo;m scaling with intention. And I&rsquo;m just getting started.</p>
+      <div class="about-tag-row reveal">
+        <span class="about-tag">&#x1F91A; Born Accessible</span>
+        <span class="about-tag">&#x26A1; Non-Technical Builder</span>
+        <span class="about-tag">&#x1F4C5; Building since Dec 2025</span>
+        <span class="about-tag">&#x1F30D; South Florida</span>
+        <span class="about-tag">&#x1F680; Agentic AI Native</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-layout reveal">
@@ -626,6 +692,8 @@
   </div>
 </section>
 
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
 <footer>
   <div class="footer-logo">OSOF LLC</div>
   <div class="footer-tagline">Closing the gap between big tech and small business.</div>
@@ -660,6 +728,25 @@
   });
 
   // Contact form — Formspree
+
+  // Active nav highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    if (window.scrollY > 500) btt.classList.add('visible');
+    else btt.classList.remove('visible');
+  });
+
   // Telecom pill toggle
   function togglePill(el) {
     const box = document.getElementById('pillInfoBox');
