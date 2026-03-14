@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Consulting — OSOF LLC</title>
+<meta name="description" content="OSOF LLC helps small businesses and healthcare organizations identify, build, and deploy custom AI solutions. Done-for-you. No technical background required on your end.">
+<meta property="og:title" content="AI Consulting — OSOF LLC">
+<meta property="og:description" content="We find where AI can save you time and money, then we build it for you. Start with a free 30-minute call.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://osof.studio/consulting">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFDMTIwOCIvPjx0ZXh0IHg9IjE2IiB5PSIyNCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSIzMDAiIGZpbGw9IiNDNDcwM0EiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk88L3RleHQ+PC9zdmc+">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #F7F0E4;
+    --terracotta: #C4703A;
+    --terracotta-light: #D9895A;
+    --terracotta-dark: #9E5528;
+    --espresso: #1C1208;
+    --espresso-mid: #3D2B14;
+    --cream: #FAF6EE;
+    --sage: #5E7A5A;
+    --text-main: #2A1A08;
+    --text-mid: #6B4E2E;
+    --text-light: #A07850;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--parchment); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(247,240,228,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,112,58,0.12); }
+  .nav-logo { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.25em; color: var(--espresso); text-decoration: none; text-transform: uppercase; }
+  .nav-back { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+  .nav-back:hover { color: var(--terracotta); }
+  .nav-cta { padding: 0.6rem 1.4rem; background: var(--terracotta); color: white; text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--terracotta-dark); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 6rem; position: relative; overflow: hidden; background: var(--espresso); }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196,112,58,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -10%; left: -5%; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(196,112,58,0.06) 0%, transparent 70%); pointer-events: none; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
+  .hero-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards; }
+  .hero-heading { font-family: 'Lora', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 300; color: #fff; line-height: 1.15; margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
+  .hero-heading em { font-style: italic; color: var(--terracotta-light); }
+  .hero-body { font-size: 1rem; line-height: 1.85; color: rgba(247,240,228,0.72); font-weight: 300; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 2rem; background: var(--terracotta); color: white; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 2rem; border: 1px solid rgba(196,112,58,0.4); color: rgba(247,240,228,0.8); text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 4px; transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost:hover { border-color: var(--terracotta-light); color: var(--terracotta-light); }
+  .hero-proof { display: flex; flex-direction: column; gap: 1rem; opacity: 0; animation: fadeUp 0.8s ease 1s forwards; }
+  .proof-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,112,58,0.15); border-radius: 12px; padding: 1.4rem 1.6rem; }
+  .proof-number { font-family: 'Lora', serif; font-size: 2.8rem; font-weight: 300; color: var(--terracotta-light); line-height: 1; margin-bottom: 0.3rem; }
+  .proof-label { font-size: 0.78rem; color: rgba(247,240,228,0.5); font-weight: 300; line-height: 1.5; }
+
+  /* SECTION SHARED */
+  section { padding: 6rem 4rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; }
+  .section-heading { font-family: 'Lora', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; color: var(--espresso); line-height: 1.25; margin-bottom: 1.5rem; }
+  .section-heading.light { color: #fff; }
+  .divider { width: 40px; height: 2px; background: var(--terracotta); border-radius: 2px; margin-bottom: 2.5rem; }
+
+  /* HOW IT WORKS */
+  #how { background: var(--cream); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+  .step { position: relative; padding: 2rem; background: white; border: 1px solid rgba(196,112,58,0.1); border-radius: 16px; }
+  .step-num { font-family: 'Lora', serif; font-size: 4rem; font-weight: 300; color: rgba(196,112,58,0.12); line-height: 1; margin-bottom: 1rem; }
+  .step-name { font-size: 1.05rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.7rem; }
+  .step-desc { font-size: 0.88rem; line-height: 1.75; color: var(--text-mid); }
+  .step-connector { position: absolute; top: 3rem; right: -1.2rem; width: 2.4rem; height: 1px; background: rgba(196,112,58,0.25); z-index: 1; }
+
+  /* WHAT WE BUILD */
+  #services { background: var(--espresso); }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .service-item { padding: 2rem; border: 1px solid rgba(196,112,58,0.15); border-radius: 14px; transition: border-color 0.3s, background 0.3s; cursor: default; }
+  .service-item:hover { border-color: rgba(196,112,58,0.4); background: rgba(196,112,58,0.04); }
+  .service-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .service-name { font-size: 1rem; font-weight: 600; color: var(--parchment); margin-bottom: 0.6rem; }
+  .service-desc { font-size: 0.85rem; line-height: 1.75; color: rgba(247,240,228,0.55); }
+  .service-tag { display: inline-block; margin-top: 1rem; padding: 0.3rem 0.8rem; border: 1px solid rgba(196,112,58,0.25); border-radius: 20px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta-light); }
+
+  /* PRICING */
+  #pricing { background: var(--parchment); }
+  .pricing-flow { display: flex; flex-direction: column; align-items: center; margin-top: 3rem; width: 100%; }
+  .flow-card { width: 100%; max-width: 580px; }
+  .flow-card-inner { background: white; border: 1px solid rgba(196,112,58,0.12); border-radius: 16px; padding: 2rem; transition: box-shadow 0.2s; }
+  .flow-card-inner:hover { box-shadow: 0 8px 32px rgba(196,112,58,0.1); }
+  .flow-step-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.4rem; }
+  .flow-arrow { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; padding: 0.8rem 0; }
+  .flow-arrow-line { width: 1px; height: 20px; background: rgba(196,112,58,0.3); }
+  .flow-arrow-label { font-size: 0.68rem; color: var(--text-light); font-style: italic; letter-spacing: 0.03em; }
+  .flow-arrow-tip { font-size: 1.1rem; color: var(--terracotta); line-height: 1; }
+  .price-card { background: white; border: 1px solid rgba(196,112,58,0.12); border-radius: 16px; padding: 2rem; position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+  .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(196,112,58,0.1); }
+  .price-tier { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-light); margin-bottom: 1rem; }
+  .price-amount { font-family: 'Lora', serif; font-size: 3rem; font-weight: 300; color: var(--espresso); line-height: 1; }
+  .price-period { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.4rem; }
+  .price-note { font-size: 0.75rem; color: var(--text-light); margin-bottom: 1.5rem; font-style: italic; }
+  .price-divider { height: 1px; background: rgba(196,112,58,0.1); margin-bottom: 1.5rem; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+  .price-features li { font-size: 0.85rem; color: var(--text-mid); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.5; }
+  .price-features li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; margin-top: 0.45rem; }
+  .price-cta { display: block; text-align: center; padding: 0.85rem; background: var(--espresso); color: var(--parchment); text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 8px; transition: background 0.2s; }
+  .price-cta:hover { background: var(--terracotta); }
+  .pricing-note { margin-top: 2rem; text-align: center; font-size: 0.82rem; color: var(--text-light); line-height: 1.7; }
+
+  /* WHO THIS IS FOR */
+  #who { background: var(--cream); }
+  .who-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .who-card { padding: 2rem; background: white; border: 1px solid rgba(196,112,58,0.1); border-radius: 14px; }
+  .who-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .who-title { font-size: 1.05rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.8rem; }
+  .who-body { font-size: 0.88rem; line-height: 1.8; color: var(--text-mid); }
+  .who-examples { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .who-tag { padding: 0.3rem 0.8rem; background: rgba(196,112,58,0.08); border-radius: 20px; font-size: 0.7rem; color: var(--terracotta-dark); font-weight: 500; }
+
+  /* CTA SECTION */
+  #cta { background: var(--espresso); text-align: center; }
+  .cta-inner { max-width: 680px; margin: 0 auto; }
+  .cta-heading { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: white; line-height: 1.3; margin-bottom: 1.2rem; }
+  .cta-body { font-size: 1rem; line-height: 1.8; color: rgba(247,240,228,0.65); font-weight: 300; margin-bottom: 2.5rem; }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .cta-meta { margin-top: 1.5rem; font-size: 0.78rem; color: rgba(247,240,228,0.35); }
+
+  /* FOOTER */
+  footer { background: var(--espresso); border-top: 1px solid rgba(196,112,58,0.1); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo { font-family: 'Lora', serif; font-size: 1rem; font-weight: 300; letter-spacing: 0.3em; color: rgba(247,240,228,0.4); text-transform: uppercase; text-decoration: none; }
+  .footer-link { font-size: 0.72rem; color: rgba(247,240,228,0.3); text-decoration: none; transition: color 0.2s; }
+  .footer-link:hover { color: var(--terracotta-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-proof { flex-direction: row; flex-wrap: wrap; }
+    .proof-card { flex: 1; min-width: 130px; }
+    .steps { grid-template-columns: 1fr; }
+    .step-connector { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+
+    .who-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://osof.studio" class="nav-logo">OSOF</a>
+  <a href="https://osof.studio" class="nav-back">&larr; Back to osof.studio</a>
+  <a href="https://calendly.com/dharyl-onesetoffive/30min" target="_blank" rel="noopener" class="nav-cta">Book a Free Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">OSOF LLC &middot; AI Consulting</div>
+      <h1 class="hero-heading">We find where AI can <em>save you time and money.</em> Then we build it for you.</h1>
+      <p class="hero-body">Most businesses know AI is changing everything. Very few know what that actually means for them specifically. We come in, learn your operation, identify exactly where the opportunities are, and build the solution. You don't need a technical background. That's our job.</p>
+      <div class="hero-actions">
+        <a href="https://calendly.com/dharyl-onesetoffive/30min" target="_blank" rel="noopener" class="btn-primary">Book a Free 30-Min Call &rarr;</a>
+        <a href="#how" class="btn-ghost">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-card">
+        <div class="proof-number">3+</div>
+        <div class="proof-label">Paid client projects delivered, including custom apps and forensic analysis</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">5</div>
+        <div class="proof-label">Live products built and deployed across healthcare, EdTech, and legal</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">$0</div>
+        <div class="proof-label">Cost to find out if we're the right fit. The first call is always free</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="section-heading reveal">Simple from your end. Serious on ours.</h2>
+    <div class="divider reveal"></div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-name">Free Discovery Call</div>
+        <p class="step-desc">We spend 30 minutes learning about your business. What you do, where your time goes, what's costing you money, and what a win would actually look like. No pitch. No pressure. Just an honest conversation.</p>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-name">We Map the Opportunity</div>
+        <p class="step-desc">After the call, we put together a clear picture of where AI can help you specifically. Not generic advice. A real plan tied to your actual operation, with realistic timelines and what it would cost to build.</p>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-name">We Build and Hand It Off</div>
+        <p class="step-desc">You approve the plan and we get to work. We build, test, and deploy your solution. Then we walk you through it, train your team if needed, and make sure it actually works for the way you operate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label reveal" style="color:var(--terracotta-light);">What We Build</div>
+    <h2 class="section-heading light reveal">Real tools for real problems.</h2>
+    <div class="divider reveal"></div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <div class="service-icon">&#x1F916;</div>
+        <div class="service-name">AI Agent Workflows</div>
+        <p class="service-desc">Automated systems that handle repetitive tasks like follow-ups, scheduling, data entry, and client communication. Set it up once, let it run.</p>
+        <span class="service-tag">Automation</span>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-icon">&#x1F4F1;</div>
+        <div class="service-name">Custom Apps and Platforms</div>
+        <p class="service-desc">Fully custom web apps and mobile tools built specifically for how your business works. No bloated software subscriptions. No features you'll never use.</p>
+        <span class="service-tag">App Development</span>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-icon">&#x1F3E5;</div>
+        <div class="service-name">Healthcare Operations</div>
+        <p class="service-desc">Workflow tools, staffing intelligence, and practice management solutions built for clinical environments. HIPAA-conscious and designed around how healthcare actually runs.</p>
+        <span class="service-tag">Healthcare</span>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-icon">&#x1F4CA;</div>
+        <div class="service-name">Business Intelligence Tools</div>
+        <p class="service-desc">Custom dashboards, reporting systems, and analytics tools that give you visibility into your own data. Know what's working, what isn't, and why.</p>
+        <span class="service-tag">Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section id="who">
+  <div class="section-inner">
+    <div class="section-label reveal">Who We Work With</div>
+    <h2 class="section-heading reveal">Built for businesses that deserve better tools.</h2>
+    <div class="divider reveal"></div>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <div class="who-icon">&#x1F3EA;</div>
+        <div class="who-title">Small Business Owners</div>
+        <p class="who-body">You're running the whole operation and you know time is the thing you never have enough of. We find the parts of your day that AI can take off your plate so you can focus on the work that actually needs you.</p>
+        <div class="who-examples">
+          <span class="who-tag">Retail</span>
+          <span class="who-tag">Service businesses</span>
+          <span class="who-tag">Solo operators</span>
+          <span class="who-tag">Local shops</span>
+        </div>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">&#x1FA7A;</div>
+        <div class="who-title">Healthcare Organizations</div>
+        <p class="who-body">Clinics, practices, and healthcare staffing operations that are tired of paying enterprise prices for software that still doesn't fit. We build tools that match the way your team actually works.</p>
+        <div class="who-examples">
+          <span class="who-tag">Private practices</span>
+          <span class="who-tag">Locum agencies</span>
+          <span class="who-tag">Recruiting firms</span>
+          <span class="who-tag">Clinics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="section-heading reveal">Straightforward. No surprises.</h2>
+    <div class="divider reveal"></div>
+    <div class="pricing-flow">
+
+      <!-- Step 1: Discovery Call -->
+      <div class="flow-card reveal">
+        <div class="flow-card-inner">
+          <div class="flow-step-label">Step 1</div>
+          <div class="price-tier">Discovery Call</div>
+          <div class="price-amount">$0</div>
+          <div class="price-period">30 minutes &middot; no obligation</div>
+          <div class="price-note">The right place to start, every time</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>We learn your business and how you operate</li>
+            <li>You tell us where your time and money are going</li>
+            <li>We tell you honestly where AI can help</li>
+            <li>No pitch, no pressure, just a real conversation</li>
+          </ul>
+          <a href="https://calendly.com/dharyl-onesetoffive/30min" target="_blank" rel="noopener" class="price-cta">Book Your Free Call &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="flow-arrow reveal">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">Calls that go well move here</div>
+        <div class="flow-arrow-tip">&#x2193;</div>
+      </div>
+
+      <!-- Step 2: Deep Dive -->
+      <div class="flow-card reveal">
+        <div class="flow-card-inner">
+          <div class="flow-step-label">Step 2</div>
+          <div class="price-tier">Deep Dive</div>
+          <div class="price-amount">$500</div>
+          <div class="price-period">one-time</div>
+          <div class="price-note">For businesses ready to get serious</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Full business audit and AI opportunity mapping</li>
+            <li>Written action plan with clear recommendations</li>
+            <li>One 60-minute strategy and scoping session</li>
+            <li>Detailed project scope and honest cost estimate</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="flow-arrow reveal">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">Approved plans move into the build</div>
+        <div class="flow-arrow-tip">&#x2193;</div>
+      </div>
+
+      <!-- Step 3: Done For You -->
+      <div class="flow-card reveal">
+        <div class="flow-card-inner">
+          <div class="flow-step-label">Step 3</div>
+          <div class="price-tier">Done For You</div>
+          <div class="price-amount">$1,500<span style="font-size:1.2rem;font-weight:400;">+</span></div>
+          <div class="price-period">per project</div>
+          <div class="price-note">Scoped individually based on complexity</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Full custom build and deployment</li>
+            <li>Built around how your business actually operates</li>
+            <li>30-day support window after delivery</li>
+            <li>Handoff and training session included</li>
+            <li>You own everything we build</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="flow-arrow reveal">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">Ongoing partnerships continue here</div>
+        <div class="flow-arrow-tip">&#x2193;</div>
+      </div>
+
+      <!-- Step 4: Retainer -->
+      <div class="flow-card reveal">
+        <div class="flow-card-inner">
+          <div class="flow-step-label">Step 4</div>
+          <div class="price-tier">Retainer</div>
+          <div class="price-amount">$1,000<span style="font-size:1.2rem;font-weight:400;">/mo</span></div>
+          <div class="price-period">3-month minimum</div>
+          <div class="price-note">For businesses that want to keep growing</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Ongoing builds, updates, and improvements</li>
+            <li>Monthly strategy and review call</li>
+            <li>Priority turnaround on all requests</li>
+            <li>Direct access for quick questions and changes</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+        <p class="pricing-note reveal">Every engagement starts with a free Discovery Call. From there, complex projects move into a $500 Deep Dive before the build begins.<br>Discovery calls that go well naturally move forward. There is never any pressure to continue.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta">
+  <div class="section-inner cta-inner">
+    <h2 class="cta-heading reveal">You already know AI is changing your industry. Let's figure out what that means for you specifically.</h2>
+    <p class="cta-body reveal">Thirty minutes. No pitch deck. No pressure. Just an honest conversation about where your business is and where the opportunities are. If we're a fit, great. If not, you'll still walk away with a clearer picture than you had before.</p>
+    <div class="cta-buttons reveal">
+      <a href="https://calendly.com/dharyl-onesetoffive/30min" target="_blank" rel="noopener" class="btn-primary">Book Your Free Call &rarr;</a>
+      <a href="https://osof.studio#contact" class="btn-ghost">Send a Message Instead</a>
+    </div>
+    <p class="cta-meta reveal">Free 30-minute discovery call &middot; No obligation &middot; Responses within 24 hours</p>
+  </div>
+</section>
+
+<footer>
+  <a href="https://osof.studio" class="footer-logo">OSOF LLC</a>
+  <a href="https://osof.studio" class="footer-link">&larr; Back to osof.studio</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
