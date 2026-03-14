@@ -17,7 +17,7 @@
 <meta name="theme-color" content="#1C1208">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --parchment: #F7F0E4;
@@ -43,13 +43,15 @@
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s, backdrop-filter 0.3s; }
   nav.scrolled { background: rgba(247,240,228,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,112,58,0.15); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.15em; color: var(--parchment); text-decoration: none; transition: color 0.3s; }
+  .nav-logo { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.15em; color: var(--parchment); text-decoration: none; transition: color 0.3s; }
   nav.scrolled .nav-logo { color: var(--espresso); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,240,228,0.7); text-decoration: none; position: relative; transition: color 0.2s; }
   nav.scrolled .nav-links a { color: var(--text-mid); }
   .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--terracotta); transition: width 0.3s; }
   .nav-links a:hover { color: var(--terracotta-light) !important; }
+  .nav-consulting-cta { background: var(--terracotta) !important; color: white !important; padding: 0.5rem 1.2rem; border-radius: 4px; }
+  .nav-consulting-cta:hover { background: var(--terracotta-dark) !important; color: white !important; }
   .nav-links a:hover::after { width: 100%; }
 
   /* HERO */
@@ -64,14 +66,14 @@
   @keyframes ringPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.03); opacity: 0.6; } }
   .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
   .hero-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terracotta-light); opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; margin-bottom: 2rem; text-shadow: 0 0 30px rgba(196,112,58,0.4); }
-  .hero-logo { font-family: 'Cormorant Garamond', serif; font-size: clamp(5rem,14vw,11rem); font-weight: 300; letter-spacing: 0.18em; color: #FFFFFF; line-height: 1; display: flex; gap: 0.05em; justify-content: center; margin-bottom: 0.3em; text-shadow: 0 4px 40px rgba(196,112,58,0.2); }
+  .hero-logo { font-family: 'Lora', serif; font-size: clamp(5rem,14vw,11rem); font-weight: 300; letter-spacing: 0.18em; color: #FFFFFF; line-height: 1; display: flex; gap: 0.05em; justify-content: center; margin-bottom: 0.3em; text-shadow: 0 4px 40px rgba(196,112,58,0.2); }
   .hero-logo .letter { display: inline-block; opacity: 0; transform: translateY(60px) rotate(8deg); animation: letterDrop 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards; }
   .hero-logo .letter:nth-child(1) { animation-delay: 0.5s; }
   .hero-logo .letter:nth-child(2) { animation-delay: 0.7s; }
   .hero-logo .letter:nth-child(3) { animation-delay: 0.9s; }
   .hero-logo .letter:nth-child(4) { animation-delay: 1.1s; }
   .hero-llc { font-family: 'DM Sans', sans-serif; font-size: clamp(0.75rem,2vw,1rem); font-weight: 400; letter-spacing: 0.6em; color: var(--terracotta-light); text-transform: uppercase; opacity: 0; animation: fadeUp 0.8s ease 1.6s forwards; margin-bottom: 2.5rem; }
-  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem,3vw,1.9rem); font-weight: 300; font-style: italic; color: rgba(247,240,228,0.95); opacity: 0; animation: fadeUp 0.9s ease 2s forwards; max-width: 640px; margin: 0 auto 3rem; line-height: 1.65; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .hero-tagline { font-family: 'Lora', serif; font-size: clamp(1.2rem,3vw,1.9rem); font-weight: 300; font-style: italic; color: rgba(247,240,228,0.95); opacity: 0; animation: fadeUp 0.9s ease 2s forwards; max-width: 640px; margin: 0 auto 3rem; line-height: 1.65; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   .hero-cta { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; border: 1px solid rgba(196,112,58,0.8); color: #FFFFFF; text-decoration: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px; opacity: 0; animation: fadeUp 0.8s ease 2.5s forwards; transition: all 0.3s; position: relative; overflow: hidden; }
   .hero-cta::before { content: ''; position: absolute; inset: 0; background: var(--terracotta); transform: translateX(-100%); transition: transform 0.3s ease; }
   .hero-cta:hover::before { transform: translateX(0); }
@@ -84,7 +86,7 @@
   section { padding: 7rem 3rem; }
   .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
   .section-label::before { content: ''; width: 30px; height: 1px; background: var(--terracotta); }
-  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem,5vw,4rem); font-weight: 400; line-height: 1.15; color: var(--espresso); margin-bottom: 1.5rem; }
+  .section-heading { font-family: 'Lora', serif; font-size: clamp(2.5rem,5vw,4rem); font-weight: 400; line-height: 1.15; color: var(--espresso); margin-bottom: 1.5rem; }
   .section-body { font-size: 1.05rem; line-height: 1.75; color: var(--text-mid); max-width: 600px; font-weight: 300; }
   .divider { width: 60px; height: 2px; background: var(--terracotta); margin: 2rem 0; }
 
@@ -93,19 +95,19 @@
 
   /* MISSION */
   #mission { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; overflow: hidden; }
-  #mission::before { content: 'OSOF'; position: absolute; right: -2rem; bottom: -3rem; font-family: 'Cormorant Garamond', serif; font-size: 18rem; font-weight: 700; color: rgba(196,112,58,0.04); line-height: 1; pointer-events: none; user-select: none; }
+  #mission::before { content: 'OSOF'; position: absolute; right: -2rem; bottom: -3rem; font-family: 'Lora', serif; font-size: 18rem; font-weight: 700; color: rgba(196,112,58,0.04); line-height: 1; pointer-events: none; user-select: none; }
   .mission-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
   .pillar { padding: 1.8rem; background: white; border-radius: 12px; border: 1px solid rgba(196,112,58,0.1); position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
   .pillar::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--terracotta); transform: scaleX(0); transition: transform 0.3s; }
   .pillar:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(196,112,58,0.1); }
   .pillar:hover::after { transform: scaleX(1); }
   .pillar-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-  .pillar h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.5rem; }
+  .pillar h3 { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.5rem; }
   .pillar p { font-size: 0.82rem; line-height: 1.6; color: var(--text-light); }
   .mission-visual { display: flex; align-items: center; justify-content: center; }
   .mission-circle { width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, #C4703A 0%, #9E5528 40%, #1C1208 100%); display: flex; align-items: center; justify-content: center; animation: slowRotate 20s linear infinite; }
   .mission-circle-inner { width: 300px; height: 300px; border-radius: 50%; background: var(--cream); display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 2rem; animation: counterRotate 20s linear infinite; }
-  .mission-stat { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: var(--terracotta); line-height: 1; }
+  .mission-stat { font-family: 'Lora', serif; font-size: 3.5rem; font-weight: 700; color: var(--terracotta); line-height: 1; }
   .mission-stat-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); margin-top: 0.4rem; }
   @keyframes slowRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   @keyframes counterRotate { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
@@ -114,7 +116,37 @@
   #products { background: var(--parchment); }
   .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
   .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.8rem; }
+
+  /* MOSAIC PRODUCTS GRID */
+  .mosaic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 210px 210px 280px 280px;
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .mosaic-hero { grid-column: 1; grid-row: 1 / span 4; border-radius: 20px; overflow: hidden; cursor: pointer; }
+  .mosaic-hero.flip-card { height: auto; }
+  .mosaic-hero .flip-card-inner { position: relative; width: 100%; height: 1020px; min-height: 0; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1); }
+  .mosaic-hero .flip-card-front { height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 2.4rem; }
+  .mosaic-hero .flip-card-back { padding: 2.4rem; height: 100%; }
+  .hero-card-content { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+  .mosaic-live-badge { display: inline-block; padding: 0.4rem 1rem; background: rgba(196,112,58,0.15); border: 1px solid rgba(196,112,58,0.3); border-radius: 20px; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; color: var(--terracotta-light); width: fit-content; }
+  .mosaic-soon-badge { display: inline-block; margin-top: 0.6rem; padding: 0.3rem 0.8rem; background: rgba(196,112,58,0.08); border: 1px solid rgba(196,112,58,0.2); border-radius: 20px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: var(--terracotta-dark); }
+  .mosaic-cell { border-radius: 16px; overflow: hidden; cursor: pointer; }
+  .mosaic-cell.flip-card { height: auto; }
+  .mosaic-cell .flip-card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.4,0,0.2,1); }
+  .mosaic-cell .flip-card-front { background: white; border: 1px solid rgba(196,112,58,0.1); padding: 1.4rem; display: flex; flex-direction: column; position: absolute; inset: 0; }
+  .mosaic-cell .flip-card-back { padding: 1.4rem; position: absolute; inset: 0; }
+  .mosaic-cell-c1 { grid-column: 2; grid-row: 1 / span 2; }
+  .mosaic-cell-c2 { grid-column: 3; grid-row: 1 / span 2; }
+  .mosaic-cell-c3 { grid-column: 2; grid-row: 3; }
+  .mosaic-cell-c4 { grid-column: 3; grid-row: 3; }
+  .mosaic-cell-c5 { grid-column: 2; grid-row: 4; }
+  .mosaic-cell-c6 { grid-column: 3; grid-row: 4; }
+
   .flip-card { height: 420px; perspective: 1200px; cursor: pointer; }
+  .mosaic-cell.flip-card, .mosaic-hero.flip-card { height: auto; }
   .flip-card-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.4,0.2,0.2,1); }
   .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
   .flip-card-front, .flip-card-back { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 16px; overflow: hidden; }
@@ -123,13 +155,13 @@
   .flip-card-back { background: var(--espresso); transform: rotateY(180deg); display: flex; flex-direction: column; padding: 1.6rem 1.8rem; justify-content: space-between; overflow: hidden; }
   .card-app-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.8rem; }
   .card-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.7rem; }
-  .card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.8rem; line-height: 1.2; }
+  .card-name { font-family: 'Lora', serif; font-size: 1.7rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.8rem; line-height: 1.2; }
   .card-desc { font-size: 0.85rem; line-height: 1.65; color: var(--text-mid); flex: 1; }
   .card-hint { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
   .card-hint::after { content: '↻'; font-size: 0.9rem; animation: spin 4s linear infinite; }
   @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   .back-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terracotta-light); margin-bottom: 0.7rem; }
-  .back-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--parchment); margin-bottom: 0.7rem; }
+  .back-name { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 400; color: var(--parchment); margin-bottom: 0.7rem; }
   .back-features { list-style: none; flex: 1; }
   .back-features li { font-size: 0.78rem; color: rgba(247,240,228,0.7); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.35; }
   .back-features li::before { content: '→'; color: var(--terracotta-light); flex-shrink: 0; }
@@ -150,8 +182,8 @@
   .service-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top left, rgba(196,112,58,0.15) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
   .service-card:hover { border-color: rgba(196,112,58,0.5); transform: translateY(-5px); }
   .service-card:hover::before { opacity: 1; }
-  .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(196,112,58,0.25); line-height: 1; margin-bottom: 1.5rem; }
-  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.8rem; }
+  .service-number { font-family: 'Lora', serif; font-size: 3.5rem; font-weight: 300; color: rgba(196,112,58,0.25); line-height: 1; margin-bottom: 1.5rem; }
+  .service-name { font-family: 'Lora', serif; font-size: 1.5rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.8rem; }
   .service-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(247,240,228,0.82); }
 
   /* TELECOM */
@@ -163,7 +195,7 @@
   .telecom-visual { background: white; border-radius: 20px; padding: 3rem; border: 1px solid rgba(196,112,58,0.15); position: relative; }
   .telecom-visual::before { content: '📡'; position: absolute; top: -1.5rem; left: 2.5rem; font-size: 3rem; }
   .telecom-title-block { margin-top: 1rem; margin-bottom: 2rem; }
-  .telecom-title-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.4rem; }
+  .telecom-title-block h3 { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.4rem; }
   .telecom-title-block p { font-size: 0.82rem; color: var(--text-light); }
   .telecom-list { list-style: none; }
   .telecom-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(196,112,58,0.08); font-size: 0.85rem; color: var(--text-mid); line-height: 1.5; }
@@ -178,9 +210,9 @@
   .about-emblem { width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(196,112,58,0.2); display: flex; align-items: center; justify-content: center; position: relative; }
   .about-emblem::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(196,112,58,0.1); }
   .about-emblem::after { content: ''; position: absolute; inset: 24px; border-radius: 50%; background: radial-gradient(circle, rgba(196,112,58,0.08) 0%, transparent 70%); }
-  .about-emblem-text { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--terracotta); line-height: 1; position: relative; z-index: 1; }
+  .about-emblem-text { font-family: 'Lora', serif; font-size: 5rem; font-weight: 300; color: var(--terracotta); line-height: 1; position: relative; z-index: 1; }
   .about-emblem-sub { position: absolute; bottom: 3.5rem; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-light); }
-  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--espresso); line-height: 1.5; margin-bottom: 2rem; position: relative; padding-left: 1.5rem; }
+  .about-quote { font-family: 'Lora', serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 400; font-style: italic; color: var(--espresso); line-height: 1.5; margin-bottom: 2rem; position: relative; padding-left: 1.5rem; }
   .about-quote::before { content: ''; position: absolute; left: 0; top: 0.3em; bottom: 0.3em; width: 2px; background: var(--terracotta); border-radius: 2px; }
   .about-body { font-size: 1rem; line-height: 1.85; color: var(--text-mid); font-weight: 300; margin-bottom: 1.5rem; }
   .about-body:last-child { margin-bottom: 0; }
@@ -237,9 +269,9 @@
   }
 
   footer { background: var(--espresso); padding: 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.15em; color: rgba(247,240,228,0.5); }
+  .footer-logo { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.15em; color: rgba(247,240,228,0.5); }
   .footer-copy { font-size: 0.7rem; color: rgba(247,240,228,0.25); }
-  .footer-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-style: italic; color: rgba(196,112,58,0.5); }
+  .footer-tagline { font-family: 'Lora', serif; font-size: 0.85rem; font-style: italic; color: rgba(196,112,58,0.5); }
 
   .back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; background: var(--terracotta); border: none; color: white; font-size: 1.1rem; cursor: pointer; z-index: 999; opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s, background 0.2s; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(196,112,58,0.3); }
   .back-to-top.visible { opacity: 1; transform: translateY(0); }
@@ -248,6 +280,27 @@
   .nav-links a.active::after { width: 100%; }
 
   @media (max-width: 900px) {
+    .mosaic-grid {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: auto !important;
+    }
+    .mosaic-hero,
+    .mosaic-cell-c1,
+    .mosaic-cell-c2,
+    .mosaic-cell-c3,
+    .mosaic-cell-c4,
+    .mosaic-cell-c5,
+    .mosaic-cell-c6 {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+    }
+    .mosaic-hero { border-radius: 16px; }
+    .mosaic-hero .flip-card-inner { min-height: 360px !important; height: auto !important; }
+    .mosaic-hero .flip-card-front,
+    .mosaic-hero .flip-card-back { position: relative; min-height: 360px; }
+    .mosaic-cell .flip-card-inner { min-height: 280px; }
+    .mosaic-cell .flip-card-front,
+    .mosaic-cell .flip-card-back { position: absolute; }
     nav { background: rgba(28,18,8,0.95) !important; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,112,58,0.15); }
     .nav-logo { color: var(--parchment) !important; }
     #mission { grid-template-columns: 1fr; }
@@ -281,7 +334,7 @@
   footer { flex-direction: column; gap: 1rem; text-align: center; }
   }
   @media (max-width: 600px) {
-    .products-grid { grid-template-columns: 1fr; }
+
     .mission-pillars { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
   }
@@ -299,6 +352,7 @@
     <li><a href="#plantation">Story</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="/consulting" class="nav-consulting-cta">Work With Us</a></li>
   </ul>
 </nav>
 
@@ -358,254 +412,214 @@
       <div class="section-label">What We&rsquo;ve Built</div>
       <h2 class="section-heading">The Product Suite</h2>
     </div>
-    <p style="max-width:280px;font-size:0.85rem;line-height:1.7;color:var(--text-light);text-align:right;">Click any card to learn more about the product.</p>
+    <p class="products-intro">Every product here is live, shipped, and built from scratch. Click any card to see what&rsquo;s under the hood.</p>
   </div>
-  <div class="products-grid">
 
-    <!-- Layman -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+  <div class="mosaic-grid">
+
+    <!-- HERO: Paideon — full left column -->
+    <div class="mosaic-hero flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(94,122,90,0.12);">&#x2696;&#xFE0F;</div>
-          <div class="card-tag">Legal Tech &middot; Accessibility</div>
-          <div class="card-name">Layman</div>
-          <p class="card-desc">Legal documents shouldn&rsquo;t require a law degree to understand. Layman breaks down complex legal language into plain terms &mdash; in multiple languages &mdash; so everyone knows what they&rsquo;re signing.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back">
-          <div>
-            <div class="back-label">Layman &middot; Legal Made Human</div>
-            <div class="back-name">Plain language for everyone.</div>
-            <ul class="back-features">
-              <li>Upload any legal document for instant plain-language breakdown</li>
-              <li>Multi-language support &mdash; serving communities that need it most</li>
-              <li>Fairness scoring to flag potentially one-sided terms</li>
-              <li>Accessibility-first design from the ground up</li>
-            </ul>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;">
-              <a class="back-cta" href="https://apps.apple.com/us/app/layman/id6757346427" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="width:100%;justify-content:center;">Download on App Store &rarr;</a>
-              <a class="back-cta" href="https://LaymanDocs.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="width:100%;justify-content:center;background:rgba(255,255,255,0.1);">Visit LaymanDocs.com &rarr;</a>
+        <div class="flip-card-front" style="background:#0D1E10;border-color:rgba(94,158,106,0.2);">
+          <div class="hero-card-content">
+            <div>
+              <div style="font-size:2rem;margin-bottom:1.2rem;">&#x1F4DA;</div>
+              <div class="card-tag" style="color:#7EC48A;">EdTech &middot; AI Grading</div>
+              <div class="card-name" style="color:#fff;font-size:2.4rem;line-height:1.1;">Paideon</div>
+              <p style="color:rgba(247,240,228,0.65);margin-top:1rem;font-size:0.95rem;line-height:1.8;font-style:italic;font-family:'Lora',serif;">Grade smarter. Get your weekends back.</p>
+              <p style="color:rgba(247,240,228,0.5);margin-top:0.6rem;font-size:0.85rem;line-height:1.7;">AI-powered grading built for real teachers. Upload work, grade against your rubric, export to Canvas. Hours become minutes.</p>
             </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TenensScope -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(0,120,255,0.15);">&#x1F52D;</div>
-          <div class="card-tag">Healthcare Recruiting &middot; Intelligence</div>
-          <div class="card-name">Tenens Scope</div>
-          <p class="card-desc">The intelligence platform built for the locums industry. Whether you&rsquo;re launching a startup or an individual tracking your own book &mdash; Tenens Scope gives you an edge no other tool can match.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back" style="background:#0D1E35;">
-          <div>
-            <div class="back-label" style="color:#4A9EFF;">Tenens Scope &middot; Physician Intelligence</div>
-            <div class="back-name">Your book. Your edge. Your insight.</div>
-            <ul class="back-features">
-              <li>AI-powered algorithms predict physician locums likelihood with precision</li>
-              <li>Turnkey solution for locum startups &mdash; launch your book from day one</li>
-              <li>Track and own your individual relationships &amp; analytics no matter what side of the desk you&rsquo;re on</li>
-              <li>Advanced integrations running under the hood &mdash; you just see results</li>
-            </ul>
+            <div>
+              <div class="mosaic-live-badge" style="background:rgba(94,158,106,0.15);color:#7EC48A;border-color:rgba(94,158,106,0.3);">&#x2713; Pilot Schools Open</div>
+              <div class="card-hint" style="color:rgba(247,240,228,0.3);margin-top:1.2rem;">Tap to flip</div>
+            </div>
           </div>
-          <a class="back-cta" href="https://TenensScope.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:#0055CC;">Visit TenensScope.com &rarr;</a>
         </div>
-      </div>
-    </div>
-
-    <!-- Paideon -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon">&#x1F4DA;</div>
-          <div class="card-tag">EdTech &middot; AI Grading</div>
-          <div class="card-name">Paideon</div>
-          <p class="card-desc">AI-powered grading built for real teachers. Upload student work, grade against your rubric, review, and export straight to Canvas. Hours of grading done in minutes.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" style="background:#0A1A0D;">
           <div>
-            <div class="back-label">Paideon &middot; AI Grading Platform</div>
+            <div class="back-label" style="color:#7EC48A;">Paideon &middot; EdTech</div>
             <div class="back-name">Get your weekends back.</div>
             <ul class="back-features">
-              <li>Grades against your rubric, not its own judgment</li>
+              <li>Grades strictly against your rubric, not its own standards</li>
               <li>Batch process an entire class at once</li>
-              <li>FERPA compliant with student PII stripped before AI sees any work</li>
-              <li>Now accepting pilot schools for the 2026-2027 school year</li>
+              <li>FERPA compliant &mdash; student PII stripped before AI sees any work</li>
+              <li>Canvas-ready CSV export with one click</li>
+              <li>Now accepting pilot schools for 2026-2027</li>
             </ul>
           </div>
-          <a class="back-cta" href="https://paideon.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit Paideon.app &rarr;</a>
+          <a class="back-cta" href="https://paideon.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:#3D6B39;margin-top:1.5rem;">Visit Paideon.app &rarr;</a>
         </div>
       </div>
     </div>
 
-    <!-- SOTU Bingo -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+    <!-- Layman — col 2, rows 1-2 tall highlight -->
+    <div class="mosaic-cell mosaic-cell-c1 flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <div class="card-app-icon">&#x1F3B1;</div>
-          <div class="card-tag">Web App &middot; Political Satire</div>
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">&#x2696;&#xFE0F;</div>
+          <div class="card-tag">iOS App &middot; Legal Tech</div>
+          <div class="card-name">Layman</div>
+          <p class="card-desc" style="margin-top:0.6rem;font-style:italic;">Legal docs, plain English.</p>
+          <p class="card-desc" style="margin-top:0.4rem;font-size:0.82rem;">Built for everyone who has ever signed something they didn&rsquo;t fully understand.</p>
+          <div style="margin-top:auto;">
+            <div class="mosaic-live-badge">&#x2713; Live on App Store</div>
+            <div class="card-hint">Tap to flip</div>
+          </div>
+        </div>
+        <div class="flip-card-back" style="background:#2A1208;">
+          <div>
+            <div class="back-label" style="color:var(--terracotta-light);">Layman &middot; Legal Tech</div>
+            <div class="back-name">Plain language for everyone.</div>
+            <ul class="back-features">
+              <li>Translates legal documents into clear, everyday language</li>
+              <li>Haitian Creole support &mdash; accessibility as a first-class feature</li>
+              <li>Live on the App Store with a dedicated web presence at LaymanDocs.com</li>
+              <li>Built for renters, patients, employees &mdash; anyone navigating legal language alone</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.2rem;">
+            <a class="back-cta" href="https://apps.apple.com/us/app/layman/id6757346427" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="justify-content:center;">Download on App Store &rarr;</a>
+            <a class="back-cta" href="https://LaymanDocs.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:rgba(255,255,255,0.08);justify-content:center;">Visit LaymanDocs.com &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TenensScope — col 3, rows 1-2 tall highlight -->
+    <div class="mosaic-cell mosaic-cell-c2 flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">&#x1F52D;</div>
+          <div class="card-tag">Healthcare &middot; Intelligence</div>
+          <div class="card-name">Tenens Scope</div>
+          <p class="card-desc" style="margin-top:0.6rem;">The intelligence platform built for the locums industry. AI-powered precision, no other tool comes close.</p>
+          <div class="card-hint" style="margin-top:auto;">Tap to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <div>
+            <div class="back-label">Tenens Scope &middot; Intelligence</div>
+            <div class="back-name">Your book. Your edge. Your insight.</div>
+            <ul class="back-features">
+              <li>AI-powered locums likelihood prediction with precision</li>
+              <li>Turnkey solution for locum startups</li>
+              <li>Own your relationships and analytics no matter what side of the desk you&rsquo;re on</li>
+              <li>Advanced integrations running under the hood</li>
+            </ul>
+          </div>
+          <a class="back-cta" href="https://TenensScope.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-top:1.2rem;">Visit TenensScope.com &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CrossFrame — col 2 row 3 -->
+    <div class="mosaic-cell mosaic-cell-c3 flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div style="font-size:1.3rem;margin-bottom:0.6rem;">&#x1F5BC;&#xFE0F;</div>
+          <div class="card-tag">Tool &middot; Screenshots</div>
+          <div class="card-name">CrossFrame</div>
+          <p class="card-desc" style="margin-top:0.5rem;">Browser-based App Store screenshot builder. No Figma, no Photoshop.</p>
+          <div class="card-hint" style="margin-top:auto;">Tap to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <div>
+            <div class="back-label">CrossFrame &middot; Dev Tool</div>
+            <div class="back-name">Ship better screenshots.</div>
+            <ul class="back-features">
+              <li>Browser-based, no design software required</li>
+              <li>App Store ready panels in minutes</li>
+              <li>Built by a developer for developers</li>
+            </ul>
+          </div>
+          <a class="back-cta" href="https://Crossframe.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-top:1.2rem;">Try CrossFrame &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice Manager — col 3 row 3 -->
+    <div class="mosaic-cell mosaic-cell-c4 flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div style="font-size:1.3rem;margin-bottom:0.6rem;">&#x1F3E5;</div>
+          <div class="card-tag">Healthcare &middot; Ops</div>
+          <div class="card-name">Practice Manager</div>
+          <p class="card-desc" style="margin-top:0.5rem;">Real clinical organization without enterprise overhead. Explore the live environment.</p>
+          <div class="card-hint" style="margin-top:auto;">Tap to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <div>
+            <div class="back-label">Practice Manager &middot; Healthcare</div>
+            <div class="back-name">Practice smarter, not harder.</div>
+            <ul class="back-features">
+              <li>Provider and patient workflow management</li>
+              <li>Affordable alternative to bloated enterprise systems</li>
+              <li>Explore the live environment yourself</li>
+            </ul>
+          </div>
+          <a class="back-cta" href="https://OSOFclinic.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-top:1.2rem;">Explore Live &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOTU Bingo — col 2 row 4 -->
+    <div class="mosaic-cell mosaic-cell-c5 flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div style="font-size:1.3rem;margin-bottom:0.6rem;">&#x1F3B1;</div>
+          <div class="card-tag">Web App &middot; Satire</div>
           <div class="card-name">Big Beautiful Bingo</div>
-          <p class="card-desc">A real-time State of the Union bingo game built to make an exhausting night a little more fun. Because sometimes the best response to absurdity is a well-timed bingo card.</p>
-          <div class="card-hint">Tap to learn more</div>
+          <p class="card-desc" style="margin-top:0.5rem;">Real-time State of the Union bingo. Because sometimes humor is the only sane response.</p>
+          <div class="card-hint" style="margin-top:auto;">Tap to flip</div>
         </div>
         <div class="flip-card-back">
           <div>
             <div class="back-label">Big Beautiful Bingo &middot; SOTU 2026</div>
             <div class="back-name">Play along. Stay sane.</div>
             <ul class="back-features">
-              <li>Built and shipped in time for the 2026 State of the Union</li>
-              <li>Randomized bingo cards so every player gets a unique board</li>
+              <li>Built and shipped for the 2026 State of the Union</li>
+              <li>Randomized boards so every player is unique</li>
               <li>Shareable and playable on any device</li>
-              <li>Proof that good timing and a sense of humor are their own kind of skill</li>
             </ul>
           </div>
-          <a class="back-cta" href="https://sotu-bingo.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Play Now &rarr;</a>
+          <a class="back-cta" href="https://sotu-bingo.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-top:1.2rem;">Play Now &rarr;</a>
         </div>
       </div>
     </div>
 
-    <!-- Pollex -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+    <!-- MAISON — col 3 row 4 -->
+    <div class="mosaic-cell mosaic-cell-c6 flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(196,112,58,0.1);">&#x1F44D;</div>
-          <div class="coming-soon-badge">Coming Soon</div>
-          <div class="card-tag">iOS &middot; Task Management</div>
-          <div class="card-name">Pollex</div>
-          <p class="card-desc">Task management redesigned for one-handed use. Pollex is thumb-optimized for real life &mdash; whether you&rsquo;re on the go or just can&rsquo;t put your phone down with two hands.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back">
-          <div>
-            <div class="back-label">Pollex &middot; Coming to the App Store</div>
-            <div class="back-name">Your thumb&rsquo;s favorite app.</div>
-            <ul class="back-features">
-              <li>Three-stage sliding sidebar built for thumb-only navigation</li>
-              <li>iOS-native design with smooth, satisfying interactions</li>
-              <li>Accessibility at its core &mdash; designed to reach more people</li>
-              <li>Join the waitlist &mdash; be first to know when it drops</li>
-            </ul>
-          </div>
-          <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join Waitlist &rarr;</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Healthcare Practice Manager -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(184,146,42,0.12);">&#x1F3E5;</div>
-          <div class="card-tag">Healthcare &middot; Practice Management</div>
-          <div class="card-name">Healthcare Practice Manager</div>
-          <p class="card-desc">Built for clinics and practices that need real organization without enterprise overhead. Explore the live environment &mdash; manage providers, patients, and workflows all in one place.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back">
-          <div>
-            <div class="back-label">Healthcare Practice Manager</div>
-            <div class="back-name">Practice smarter, not harder.</div>
-            <ul class="back-features">
-              <li>Provider and patient workflow management</li>
-              <li>Designed for small-to-mid size clinical practices</li>
-              <li>Affordable alternative to bloated enterprise systems</li>
-              <li>Click through and explore the live environment yourself</li>
-            </ul>
-          </div>
-          <a class="back-cta" href="https://OSOFclinic.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Explore Live &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAISON -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(196,112,58,0.08);">&#x1F486;</div>
-          <div class="coming-soon-badge">Coming Soon</div>
-          <div class="card-tag">Luxury &middot; Beauty &amp; Wellness</div>
+          <div style="font-size:1.3rem;margin-bottom:0.6rem;">&#x1F485;</div>
+          <div class="card-tag">Marketplace &middot; Beauty &amp; Wellness</div>
           <div class="card-name">MAISON</div>
-          <p class="card-desc">House call luxury beauty and wellness &mdash; on demand. MAISON connects clients with barbers, nail technicians, beauticians, and massage therapists at the highest standard.</p>
-          <div class="card-hint">Tap to learn more</div>
+          <div class="mosaic-soon-badge">Coming Soon</div>
+          <p class="card-desc" style="margin-top:0.5rem;">Luxury house-call beauty and wellness, multi-provider, mobile-first.</p>
+          <div class="card-hint" style="margin-top:auto;">Tap to flip</div>
         </div>
         <div class="flip-card-back">
           <div>
-            <div class="back-label">MAISON &middot; Luxury On Demand</div>
-            <div class="back-name">The salon comes to you.</div>
+            <div class="back-label">MAISON &middot; Beauty &amp; Wellness</div>
+            <div class="back-name">Luxury, delivered to your door.</div>
             <ul class="back-features">
-              <li>Book barbers, nail techs, beauticians &amp; massage therapists</li>
-              <li>Premium experience with a luxury-forward design aesthetic</li>
-              <li>Marketplace model built for independent providers</li>
-              <li>On-demand and scheduled appointments</li>
+              <li>Multi-provider booking for house-call services</li>
+              <li>Luxury aesthetic, mobile-first experience</li>
+              <li>Built for clients and independent beauty professionals</li>
             </ul>
           </div>
-          <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join Waitlist &rarr;</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CrossFrame -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(30,22,8,0.07);">&#x1F5BC;&#xFE0F;</div>
-          <div class="card-tag">Web App &middot; Developer Tools</div>
-          <div class="card-name">CrossFrame</div>
-          <p class="card-desc">Create stunning App Store screenshot panels without a design degree. CrossFrame gives developers and makers beautiful templates with full customization &mdash; launch-ready visuals, fast.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back">
-          <div>
-            <div class="back-label">CrossFrame &middot; App Store Visuals</div>
-            <div class="back-name">Your screenshots, elevated.</div>
-            <ul class="back-features">
-              <li>Choose from curated screenshot panel templates</li>
-              <li>Full customization &mdash; colors, layouts, device frames</li>
-              <li>Browser-based &mdash; no installs, no exports, no friction</li>
-              <li>Built for indie devs who ship fast and look good doing it</li>
-            </ul>
-          </div>
-          <a class="back-cta" href="https://Crossframe.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Try CrossFrame &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Automation Consulting -->
-    <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="card-app-icon" style="background:rgba(196,112,58,0.15);">&#x1F916;</div>
-          <div class="card-tag">Consulting &middot; Agentic AI</div>
-          <div class="card-name">Automation Consulting</div>
-          <p class="card-desc">Let AI agents do the heavy lifting in your business or personal workflows. We design, deploy, and optimize agentic systems that actually work.</p>
-          <div class="card-hint">Tap to learn more</div>
-        </div>
-        <div class="flip-card-back" style="background:var(--terracotta-dark);">
-          <div>
-            <div class="back-label">Agentic AI Consulting</div>
-            <div class="back-name">Automate what holds you back.</div>
-            <ul class="back-features">
-              <li>Custom AI agent builds for business and personal workflows</li>
-              <li>Prospecting automation, customer service bots, and more</li>
-              <li>We handle setup, configuration, and training</li>
-              <li>Ongoing support so you&rsquo;re never left alone with the tech</li>
-            </ul>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;">
-              <a class="back-cta" href="https://easy-shell.replit.app" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="background:var(--espresso);width:100%;justify-content:center;">Explore Easy Shell &rarr;</a>
-              <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="background:rgba(255,255,255,0.1);width:100%;justify-content:center;">Book a Consult &rarr;</button>
-            </div>
+          <button class="back-cta" onclick="event.stopPropagation();document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="margin-top:1.2rem;">Join Waitlist &rarr;</button>
         </div>
       </div>
     </div>
 
   </div>
+
 </section>
+
+
+
+
+
 
 <!-- SERVICES -->
 <section id="services">
@@ -630,6 +644,10 @@
       <div class="service-name">Small Business Strategy</div>
       <p class="service-desc">Affordable marketing, platform ownership strategies, and gap analysis for small businesses ready to grow without losing their identity or their margins.</p>
     </div>
+  </div>
+  <div style="text-align:center;padding:3rem 0 0;" class="reveal">
+    <p style="font-size:0.9rem;color:rgba(247,240,228,0.5);margin-bottom:1.2rem;">Ready to bring AI into your business? Let&rsquo;s figure out exactly where it can help.</p>
+    <a href="/consulting" style="display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.2rem;background:var(--terracotta);color:white;text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;border-radius:4px;">See How We Work &rarr;</a>
   </div>
 </section>
 
